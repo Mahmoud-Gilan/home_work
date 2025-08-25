@@ -1,5 +1,5 @@
 void main() {
-  List<int> scores = [66, 90, 78, 12];
+  List<int>? scores = [];
 
   if (scores == null || scores.isEmpty) {
     print('No scores');
