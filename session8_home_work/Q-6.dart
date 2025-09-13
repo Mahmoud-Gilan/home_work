@@ -8,10 +8,15 @@ void main() {
     return;
   }
 
-  List<String> words = sentence.split(' ');
+  List<String> words = sentence
+      .split(' ')
+      .map((w) => w.replaceAll(RegExp(r'^\W+|\W+$'), ''))
+      .where((w) => w.isNotEmpty)
+      .toList();
+
   String shortestWord = words[0];
   String longestWord = words[0];
-
+  print(words);
   for (String word in words) {
     if (word.length < shortestWord.length) {
       shortestWord = word;
