@@ -16,9 +16,9 @@ class MyApp extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Column(
+            spacing: 16,
             children: [
               customBox(370, 200, Color.fromARGB(255, 217, 236, 246)),
-              SizedBox(height: 20),
               Row(
                 children: [
                   customBox(25, 25, Color(0xffdddddd)),
@@ -26,9 +26,7 @@ class MyApp extends StatelessWidget {
                   customBox(335, 25, Color(0xffdddddd)),
                 ],
               ),
-              SizedBox(height: 15),
               Divider(color: Color(0xffdddddd), thickness: 1),
-              SizedBox(height: 15),
               Row(
                 children: [
                   Column(
@@ -50,7 +48,6 @@ class MyApp extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
               Container(
                 color: Color.fromARGB(159, 239, 217, 244),
                 child: Row(
@@ -72,7 +69,6 @@ class MyApp extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 20),
               Row(
                 children: [
                   customBox(180, 60, Color(0xffb2dedb)),
@@ -80,7 +76,6 @@ class MyApp extends StatelessWidget {
                   customBox(180, 60, Color(0xff80cbc4)),
                 ],
               ),
-              SizedBox(height: 20),
               customBox(370, 50, Color(0xffe0e0e0)),
             ],
           ),
