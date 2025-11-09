@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class HeightSection extends StatefulWidget {
   final Function(double) onHeightChanged;
   const HeightSection({super.key, required this.onHeightChanged});
+  
   @override
   State<HeightSection> createState() => _HeightSectionState();
 }

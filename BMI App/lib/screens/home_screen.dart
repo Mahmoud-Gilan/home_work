@@ -9,12 +9,10 @@ class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
-
 class _HomeScreenState extends State<HomeScreen> {
   double currentWeight = 60;
   int currentAge = 25;
   double currentHeight = 170;
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -34,13 +32,11 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 GanderSection(),
                 SizedBox(height: 30),
-                HeightSection(
-                  onHeightChanged: (H) => setState(() => currentHeight = H),
-                ),
+                HeightSection(onHeightChanged: (H) => currentHeight = H),
                 SizedBox(height: 30),
                 WeightAgeSection(
-                  onAgeChanged: (A) => setState(() => currentAge = A),
-                  onWeightChanged: (W) => setState(() => currentWeight = W),
+                  onAgeChanged: (A) => currentAge = A,
+                  onWeightChanged: (W) => currentWeight = W,
                 ),
                 SizedBox(height: 30),
                 CalculationSection(
