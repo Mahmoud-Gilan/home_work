@@ -1,11 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/screens/home_screen.dart';
+import 'package:quiz_app/models/questions_model.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key});
+  final List<int?> selectedOptions;
+  const ResultScreen({super.key, required this.selectedOptions});
+
+  int calculateScore() {
+    int score = 0;
+    for (int i = 0; i < questionsList.length; i++) {
+      if (selectedOptions[i] == questionsList[i].correctAnswerIndex) {
+        score++;
+      }
+    }
+    return score;
+  }
 
   @override
   Widget build(BuildContext context) {
+    final int score = calculateScore();
+    final int totalQuestions = questionsList.length;
+
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -15,20 +30,19 @@ class ResultScreen extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [Color(0xFF060B26), Color(0xFF1A1F37)],
-            stops: [0.0, 1.0],
           ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Quiz Completed!',
+              'Your Result',
               style: TextStyle(fontSize: 32, color: Colors.white),
             ),
             SizedBox(height: 20),
             Text(
-              'Congratulations on finishing the quiz.',
-              style: TextStyle(fontSize: 20, color: Colors.white70),
+              'score: $score / $totalQuestions',
+              style: TextStyle(fontSize: 28, color: Colors.white70),
             ),
             SizedBox(height: 60),
             ElevatedButton(

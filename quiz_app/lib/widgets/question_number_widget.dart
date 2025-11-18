@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class QuestionNumberWidget extends StatelessWidget {
-  final String questionNumbber;
-  const QuestionNumberWidget({super.key, required this.questionNumbber});
+  final String questionNumber;
+  final String questionImage;
+  const QuestionNumberWidget({
+    super.key,
+    required this.questionNumber,
+    required this.questionImage,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +30,10 @@ class QuestionNumberWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          SizedBox(
-            width: 38,
-            height: 38,
-            child: Image.asset('assets/images/QLogo.png'),
-          ),
+          SvgPicture.asset(questionImage, width: 32, height: 32),
           Center(
             child: Text(
-              questionNumbber,
+              questionNumber,
               style: TextStyle(color: Colors.white, fontSize: 22),
             ),
           ),

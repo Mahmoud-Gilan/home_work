@@ -54,7 +54,6 @@ class GardientBackground extends StatelessWidget {
             ),
           ),
         ),
-        Center(child: Image.asset('assets/images/home_image.png', scale: .8)),
         child,
       ],
     );
